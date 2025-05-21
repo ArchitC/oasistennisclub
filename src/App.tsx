@@ -2,6 +2,12 @@ import { useState } from 'react'
 import { Globe } from './components/Globe'
 import styled from '@emotion/styled'
 
+// Add Google Fonts import
+const fontLink = document.createElement('link');
+fontLink.href = 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap';
+fontLink.rel = 'stylesheet';
+document.head.appendChild(fontLink);
+
 const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -12,74 +18,72 @@ const InfoPanel = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 10px;
+  background: rgba(212, 208, 200, 0.95);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 350px;
   z-index: 1000;
+  padding: 5px;
 `
 
 const PanelHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 15px;
+  background: rgba(0, 14, 126, 0.95);
+  color: white;
   margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
 `
 
 const Title = styled.h2`
   margin: 0;
-  color: #333;
-  font-size: 1.5rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Fira Code';
 `
 
 const CloseButton = styled.button`
-  background: none;
-  border: none;
+  background: rgba(212, 208, 200, 0.95);
   font-size: 20px;
   cursor: pointer;
-  color: #666;
-  padding: 5px;
-  line-height: 1;
-  &:hover {
-    color: #333;
-  }
-`
-
-const ImageContainer = styled.div`
-  width: 100%;
-  height: 200px;
-  background: #f5f5f5;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  overflow: hidden;
+  color: black;
+  padding: 0;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  border-radius: 0;
+  font-family: 'Fira Code';
 `
 
 const Description = styled.p`
   margin: 0 0 15px 0;
   color: #666;
-  line-height: 1.5;
   font-size: 0.95rem;
+  padding: 0px 10px;
+  font-family: 'Fira Code';
+  color: black;
 `
 
 const LocationLink = styled.a`
-  display: inline-block;
-  color: #0066cc;
-  text-decoration: none;
+  display: block;
+  color: black;
   font-size: 0.9rem;
-  padding: 8px 15px;
-  background: #f0f7ff;
-  border-radius: 5px;
+  padding: 10px 15px;
+  background: rgba(212, 208, 200, 0.95);
+  border-radius: 0px;
   transition: background-color 0.2s;
-  
-  &:hover {
-    background: #e0f0ff;
+  margin: 0 auto;
+  width: fit-content;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+  font-family: 'Fira Code';
+  position: relative;
+
+  &::first-letter {
+    text-decoration: underline;
   }
 `
 
@@ -162,17 +166,6 @@ function App() {
             <Title>{selectedMarker.name}</Title>
             <CloseButton onClick={handleClose}>×</CloseButton>
           </PanelHeader>
-          <ImageContainer>
-            {selectedMarker.imageUrl ? (
-              <img 
-                src={selectedMarker.imageUrl} 
-                alt={selectedMarker.name}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            ) : (
-              'Image coming soon'
-            )}
-          </ImageContainer>
           <Description>{selectedMarker.description}</Description>
           {selectedMarker.locationUrl && (
             <LocationLink 
@@ -189,7 +182,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open in Maps →
+              View Location
             </LocationLink>
           )}
         </InfoPanel>

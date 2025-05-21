@@ -117,6 +117,8 @@ const GlobeScene = ({ markers, onMarkerClick }: GlobeProps) => {
         zoomSpeed={0.6}
         panSpeed={0.5}
         rotateSpeed={0.4}
+        minDistance={8}
+        maxDistance={20}
       />
     </>
   );
