@@ -36,7 +36,7 @@ const Marker = ({ position, onClick }: { position: [number, number, number]; onC
     >
       <sphereGeometry args={[0.15, 32, 32]} />
       <meshStandardMaterial 
-        color="#ff4444" 
+        color="#ea399a" 
         emissive="#ff0000" 
         emissiveIntensity={0.5}
         transparent
