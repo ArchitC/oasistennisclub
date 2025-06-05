@@ -34,7 +34,7 @@ const Marker = ({ position, onClick }: { position: [number, number, number]; onC
         onClick();
       }}
     >
-      <sphereGeometry args={[0.15, 32, 32]} />
+      <sphereGeometry args={[0.13, 32, 32]} />
       <meshStandardMaterial 
         color="#ea399a" 
         emissive="#ff0000" 
@@ -55,11 +55,11 @@ const GlobeScene = ({ markers, onMarkerClick }: GlobeProps) => {
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
 
-  useFrame(() => {
-    if (globeRef.current) {
-      globeRef.current.rotation.y += 0.001;
-    }
-  });
+  // useFrame(() => {
+  //   if (globeRef.current) {
+  //     globeRef.current.rotation.y += 0.001;
+  //   }
+  // });
 
   const handleClick = (event: any) => {
     // Update the raycaster with the current pointer position

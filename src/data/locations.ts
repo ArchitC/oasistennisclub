@@ -10,20 +10,20 @@ export const locations: Location[] = [
   {
     name: 'Sonoran Hills Park',
     description: 'The heart of Phoenix, featuring the Phoenix Convention Center, Arizona Science Center, and Heritage Square.',
-    latitude: 49,
-    longitude: 312,
+    latitude: 59,
+    longitude: 344,
   },
   {
     name: 'Grayhawk Park',
     description: 'The heart of Phoenix, featuring the Phoenix Convention Center, Arizona Science Center, and Heritage Square.',
-    latitude: 43,
-    longitude: 315,
+    latitude: 54,
+    longitude: 347,
   },
   {
     name: 'Ironwood Park',
     description: 'The heart of Phoenix, featuring the Phoenix Convention Center, Arizona Science Center, and Heritage Square.',
-    latitude: 38,
-    longitude: 301,
+    latitude: 50,
+    longitude: 335,
   },
   {
     name: 'Thunderbird Park',
