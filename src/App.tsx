@@ -136,7 +136,7 @@ const MAP_BOUNDS = {
 function App() {
   const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null)
 
-  const handleMarkerClick = (marker: Marker) => {
+  const handleMarkerClick = (marker: Marker | null) => {
     setSelectedMarker(marker)
   }
 

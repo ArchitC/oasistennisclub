@@ -61,12 +61,17 @@ const GlobeScene = ({ markers, onMarkerClick }: GlobeProps) => {
   //   }
   // });
 
-  const handleClick = (event: any) => {
+  const handleClick = (event: THREE.Event) => {
     // Update the raycaster with the current pointer position
     raycaster.setFromCamera(pointer, camera);
     
+    // Get all meshes in the scene
+    const meshes = globeRef.current?.children.filter(
+      (child): child is THREE.Mesh => child instanceof THREE.Mesh
+    ) || [];
+    
     // Check if we hit any markers
-    const intersects = raycaster.intersectObjects(event.target.parent.children);
+    const intersects = raycaster.intersectObjects(meshes);
     
     // If we didn't hit any markers, notify the parent
     if (intersects.length === 0) {
