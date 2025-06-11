@@ -61,7 +61,7 @@ const GlobeScene = ({ markers, onMarkerClick }: GlobeProps) => {
   //   }
   // });
 
-  const handleClick = (event: THREE.Event) => {
+  const handleClick = () => {
     // Update the raycaster with the current pointer position
     raycaster.setFromCamera(pointer, camera);
     

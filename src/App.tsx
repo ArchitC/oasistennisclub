@@ -126,12 +126,12 @@ const markers: Marker[] = locations.map((location, index) => ({
   googleMapsUrl: getGoogleMapsUrl(location.latitude, location.longitude)
 }));
 
-const MAP_BOUNDS = {
-  north: 33.803773696921255,
-  south: 33.2,
-  east: -112.1,
-  west: -112.2
-};
+// const MAP_BOUNDS = {
+//   north: 33.803773696921255,
+//   south: 33.2,
+//   east: -112.1,
+//   west: -112.2
+// };
 
 function App() {
   const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null)
