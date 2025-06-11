@@ -1,5 +1,5 @@
 import { useRef} from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Sphere, OrbitControls, useTexture, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import styled from '@emotion/styled';
@@ -55,11 +55,11 @@ const GlobeScene = ({ markers, onMarkerClick }: GlobeProps) => {
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
 
-  // useFrame(() => {
-  //   if (globeRef.current) {
-  //     globeRef.current.rotation.y += 0.001;
-  //   }
-  // });
+  useFrame(() => {
+    if (globeRef.current) {
+      globeRef.current.rotation.y += 0.001;
+    }
+  });
 
   const handleClick = () => {
     // Update the raycaster with the current pointer position
