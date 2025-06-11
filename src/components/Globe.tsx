@@ -1,5 +1,5 @@
 import { useRef} from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { Sphere, OrbitControls, useTexture, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import styled from '@emotion/styled';
