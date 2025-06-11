@@ -16,7 +16,7 @@ interface Marker {
 
 interface GlobeProps {
   markers: Marker[];
-  onMarkerClick: (marker: Marker) => void;
+  onMarkerClick: (marker: Marker | null) => void;
 }
 
 const GlobeContainer = styled.div`
