@@ -1,4 +1,4 @@
-**URL:** [oasistennisclub.com](oasistennisclub.com)
+**URL:** oasistennisclub.com
 
 **Mission:** Make an easily accessible way for tennis players in the Phoenix metro area to locate nearby tennis courts that are available to them
 
